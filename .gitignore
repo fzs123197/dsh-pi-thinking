@@ -1,0 +1,10 @@
+# 依赖（本地 link 安装所需，不入库）
+node_modules/
+
+# npm 日志
+*.log
+npm-debug.log*
+
+# 系统文件
+.DS_Store
+Thumbs.db

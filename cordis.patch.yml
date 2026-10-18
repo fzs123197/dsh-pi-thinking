@@ -1,0 +1,5 @@
+# Bundle patch layer: loads the package's main entry as the host half.
+# The plugin is a host-side plugin only（设置卡由宿主依据 Config 的 volatile 字段自动渲染）.
+- insert:
+    - id: dsh-pi-thinking
+      name: dsh-pi-thinking

@@ -1,0 +1,47 @@
+{
+  "name": "dsh-pi-thinking",
+  "version": "0.1.0",
+  "description": "为 DSH（DeepSeek Harness）llm-pi-ai 手工声明的第三方模型自动补齐思考强度（reasoning effort）档位，并统一管理 provider 默认档与网关线值，让第三方模型也能像官方模型一样调整思考强度。",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "reasoning-effort",
+    "thinking",
+    "llm-pi-ai"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18",
+    "dsh": ">=0.1.7-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "test": "node --test test/core.test.mjs"
+  }
+}
