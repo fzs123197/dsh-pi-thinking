@@ -32,14 +32,15 @@ reasoningEfforts:
 要求：DSH ≥ 0.1.7-rc.1（0.2.x 已验证），Node ≥ 18。
 
 ```sh
-# 1. 本地目录安装（推荐用于本插件源码）
-#    注意：pnpm 以 link: 方式链接本地目录时不会自动安装插件自身依赖，
-#    因此先在插件目录执行一次安装（若目录下已有 node_modules 可跳过）：
-cd D:\NewProject1\dsh-pi-thinking
+# 1. 获取源码（已 clone 则跳过）
+git clone https://github.com/fzs123197/dsh-pi-thinking.git
+cd dsh-pi-thinking
+
+# 2. 安装依赖（pnpm 以 link: 方式链接本地目录时不会自动安装插件自身依赖）
 npm install --no-audit --no-fund
 
-# 2. 安装进目标 profile（以 web 为例）
-dsh plugin --profile web add "D:\NewProject1\dsh-pi-thinking"
+# 3. 安装进目标 profile（以 web 为例）
+dsh plugin --profile web add .
 
 # 发布到 npm 后的标准安装（依赖自动随包安装）：
 # dsh plugin --profile web add dsh-pi-thinking
